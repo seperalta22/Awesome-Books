@@ -1,19 +1,6 @@
+<h1>Awesome Books Project</h1>
+
 <a name="readme-top"></a>
-
-<div align="center">
-  <br/>
-  <br/>
-  <br/>
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="./assets/docs/logo3.svg" alt="logo" width="400"  height="auto" />
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-
-  <h1><b>Capstone1 - Monsters of Code 2023</b></h1>
-
-</div>
 
 <!-- TABLE OF CONTENTS -->
 
@@ -42,22 +29,20 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Monsters of Code 2023<a name="about-project"></a>
+# 📖 Awesome Books<a name="about-project"></a>
 
-Portfolio is a project with great potential.
+In Awesome Books Project we work only in plain JavaScript and Html.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 - HTML
-- CSS
 - JS
 
 <details>
   <summary>Client</summary>
   - HTML<br>
-  - CSS <br>
   - JS
 </details>
 
@@ -79,7 +64,7 @@ Portfolio is a project with great potential.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://sergioperalta22.github.io/Cap1-Microverse/)
+> Comming Soon...
 
 <!-- - No live demo available yet -->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -101,7 +86,7 @@ To get a local copy up and running, follow these steps.
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/SergioPeralta22/Cap1-Microverse.git
+  git clone https://github.com/SergioPeralta22/Awesome-Books.git
 ```
 
 ### Install
@@ -109,7 +94,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd my-project-folder
+  cd Awesome-Books
   npm install
 ```
 
@@ -137,13 +122,7 @@ Example command:
 
 ### Deployment
 
-You can deploy this project using:
-
-```sh
-npm run predeploy
-npm run deploy
-
-```
+> Comming Soon...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -157,15 +136,21 @@ npm run deploy
 - Twitter: [@SePeralta22](https://twitter.com/SePeralta22)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/sergioperalta22)
 
+👤 Luis Valera
+
+- GitHub: [@Luiscarlosvd](https://github.com/Luiscarlosvd)
+- Twitter: [@Luiscarlosvd29](https://twitter.com/Luiscarlosvd29)
+- LinkedIn: [Luis Valera](https://www.linkedin.com/in/luis-valera-6a5749267/)
+
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Pop-up window for the speakers section**
-- **Lenguage selection**
-- **More sections**
+- **More styling 😁**
+- **Add a navbar 👌**
+- **More sections 😎**
 
 ## Walkthrough <a name="walkthrough"></a>
 
-This [video](https://www.loom.com/share/139ed749f07b4419a2b1ea0901e7553f) shows the walkthrough of the project.
+> Comming Soon...
 
 <!-- CONTRIBUTING -->
 
@@ -185,9 +170,7 @@ If you like this project, give it a ⭐️!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Original design idea by Cindy Shin in [Behance](https://www.behance.net/gallery/29845175/CC-Global-Summit-2015)
-
-I would like to thank Microverse for giving me the opportunity to learn and grow as a developer.
+I would like to thank Microverse for giving us the opportunity to learn and grow as a developers.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
