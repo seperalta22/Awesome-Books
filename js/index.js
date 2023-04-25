@@ -1,79 +1,79 @@
-let books = [];
-const booksElement = document.querySelector('.books');
-
-function BookModel(title, author) {
-  this.title = title;
-  this.author = author;
-}
-
-function saveData() {
-  localStorage.setItem('dataBooks', JSON.stringify(books));
-}
-
-function createBook(book) {
-  const bookElement = document.createElement('div');
-  bookElement.classList.add('book');
-
-  const titleElement = document.createElement('h2');
-  titleElement.classList.add('title');
-  titleElement.textContent = book.title;
-
-  const authorElement = document.createElement('h3');
-  authorElement.classList.add('author');
-  authorElement.textContent = book.author;
-
-  const removeButton = document.createElement('button');
-  removeButton.classList.add('remove');
-  removeButton.textContent = 'Remove';
-  removeButton.addEventListener('click', () => {
-    removeBook(book);  // eslint-disable-line
-  });
-
-  const hrTag = document.createElement('hr');
-
-  bookElement.appendChild(titleElement);
-  bookElement.appendChild(authorElement);
-  bookElement.appendChild(removeButton);
-  bookElement.appendChild(hrTag);
-
-  return bookElement;
-}
-
-function renderBooks(books) {
-  books = JSON.parse(localStorage.getItem('dataBooks') || '[]');
-  books.forEach((book) => {
-    const bookElement = createBook(book);
-    booksElement.appendChild(bookElement);
-  });
-}
-
-function removeBook(book) {
-  if (localStorage.getItem('dataBooks')) {
-    books = JSON.parse(localStorage.getItem('dataBooks'));
-  }
-  books = books.filter((item) => item.title !== book.title);
-  booksElement.innerHTML = '';
-  saveData();
-  renderBooks(books);
-}
-
-function addBook(book) {
-  books.push(book);
-  const bookElement = createBook(book);
-  booksElement.appendChild(bookElement);
-  saveData();
-}
-
-// form
-
+const booksContainer = document.querySelector('.books');
 const form = document.getElementById('addBook');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const title = document.querySelector('#title').value;
-  const author = document.querySelector('#author').value;
-  const newBook = new BookModel(title, author);
-  addBook(newBook);
+class BookList {
+  constructor() {
+    this.books = [];
+  }
+
+  addBook(book) {
+    if (localStorage.getItem('localData') === null) {
+      localStorage.setItem('localData', JSON.stringify([]));
+      this.books.push(book);
+      localStorage.setItem('localData', JSON.stringify(this.books));
+      window.location = window.location.pathname;
+    } else {
+      this.books = JSON.parse(localStorage.getItem('localData'));
+      this.books.push(book);
+      localStorage.setItem('localData', JSON.stringify(this.books));
+      window.location = window.location.pathname;
+    }
+  }
+
+  removeBook(title) {
+    this.books = JSON.parse(localStorage.getItem('localData'));
+    this.books.forEach((book, index) => {
+      if (book.title === title) {
+        this.books.splice(index, 1);
+      }
+    });
+    localStorage.setItem('localData', JSON.stringify(this.books));
+    window.location = window.location.pathname;
+  }
+
+  displayBooks() {
+    this.books = JSON.parse(localStorage.getItem('localData'));
+    this.books.forEach((book) => {
+      const div = document.createElement('div');
+      div.classList.add('book');
+      div.innerHTML = `
+            <h3 class="title" >${book.title}</h3>
+            <p>${book.author}</p>
+            <button class="remove">Remove</button>
+            <hr>
+            `;
+      booksContainer.appendChild(div);
+    });
+  }
+
+  clearFields() {
+    this.title.value = '';
+    this.author.value = '';
+  }
+}
+
+const bookList = new BookList();
+
+// event listeners
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const book = {
+    title: title.value,
+    author: author.value,
+  };
+  bookList.addBook(book);
+  bookList.clearFields();
 });
 
-window.onload = renderBooks(books);
+booksContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove')) {
+    bookList.removeBook(
+      e.target.previousElementSibling.previousElementSibling.textContent,
+    );
+  }
+});
+
+document.addEventListener('DOMContentLoaded', bookList.displayBooks());
