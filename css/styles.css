@@ -1,3 +1,73 @@
-body {
-  color: black;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.awesome-books-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+  gap: 1em;
+}
+
+.books {
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+  border: 3px #272727 solid;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr;
+  padding: 0.4em 0.5em;
+  align-items: center;
+}
+
+.remove {
+  padding: 0.2em;
+  grid-column: 5 / span 1;
+}
+
+.title {
+  margin-right: 7px;
+}
+
+hr {
+  background-color: #272727;
+  width: 5em;
+  height: 3px;
+}
+
+.books div:nth-child(odd) {
+  background-color: rgba(213, 213, 213, 0.536);
+}
+
+.awesome-books-list h2 {
+  margin: 0 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+form input {
+  width: 20em;
+  padding: 0.2em;
+  border: 2px #272727 solid;;
+}
+
+.button-add {
+  width: 3em;
+}
+
+button {
+  border: 2px #272727 solid;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
 }

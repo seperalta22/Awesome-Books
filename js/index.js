@@ -40,9 +40,8 @@ class BookList {
       div.classList.add('book');
       div.innerHTML = `
             <h3 class="title" >${book.title}</h3>
-            <p>${book.author}</p>
+            <p>by ${book.author}</p>
             <button class="remove">Remove</button>
-            <hr>
             `;
       booksContainer.appendChild(div);
     });

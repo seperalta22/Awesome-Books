@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Awesome Books</title>
+</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Awesome Books</title>
-    </head>
-
-    <body>
-        <h1>Awesome Books</h1>
-        <div class="container">
-            <h2>My Book List</h2>
-            <div class="books"></div>
-
-            <form id="addBook">
-                <input type="text" id="title" name="title" placeholder="Title"> <br>
-                <input type="text" id="author" name="author" placeholder="Author"><br>
-                <button type="submit">Add</button>
-            </form>
-        </div>
-
-        <script src="js/index.js"></script>
-    </body>
+<body>
+    <section class="awesome-books-list">
+        <h1>All Awesome Books</h1>
+        <div class="books"></div>
+        <hr>
+        <h2>Add a New Book</h2>
+        <form id="addBook">
+            <input type="text" id="title" name="title" placeholder="Title" required> <br>
+            <input type="text" id="author" name="author" placeholder="Author" required><br>
+            <button type="submit" class="button-add">Add</button>
+        </form>
+    </section>
+    <script src="js/index.js"></script>
+</body>
 
 </html>
