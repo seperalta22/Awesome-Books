@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Awesome Books</title>
-</head>
 
-<body>
-    <section class="awesome-books-list">
-        <h1>All Awesome Books</h1>
-        <div class="books"></div>
-        <hr>
-        <h2>Add a New Book</h2>
-        <form id="addBook">
-            <input type="text" id="title" name="title" placeholder="Title" required> <br>
-            <input type="text" id="author" name="author" placeholder="Author" required><br>
-            <button type="submit" class="button-add">Add</button>
-        </form>
-    </section>
-    <script src="js/index.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Awesome Books</title>
+    </head>
+
+    <body>
+        <div>
+            <header>
+                <h2>Awesome Books</h2>
+                <nav>
+                    <ul>
+                        <li id="menu-list"><a href="#">List</a></li>
+                        <span>|</span>
+                        <li id="menu-add-new"><a href="#">Add New</a></li>
+                        <span>|</span>
+                        <li id="menu-contact"><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="date"></div>
+        </div>
+        <div>
+            <section id="list-section" class="awesome-books-list">
+                <h1>All Awesome Books</h1>
+                <div class="books"></div>
+                <hr>
+
+            </section>
+
+            <section class="awesome-books-list" id="add-new">
+                <h1>Add a New Book</h1>
+                <form id="addBook">
+                    <input type="text" id="title" name="title" placeholder="Title" required> <br>
+                    <input type="text" id="author" name="author" placeholder="Author" required><br>
+                    <button type="submit" class="button-add">Add</button>
+                </form>
+            </section>
+
+            <section class="awesome-books-list" id="contact-section">
+                <h1>Contact Information</h1>
+                <p>Do you have any questions or you just want to say "Hello"? <br>
+                    You can reach out to us!</p>
+                <ul>
+                    <li>Our e-mail mail@mail.com</li>
+                    <li>Our Phone number: 00463763468</li>
+                    <li>Our Address: Streetname 22,6826 City, Country</li>
+                </ul>
+
+            </section>
+        </div>
+        <footer>
+            <h3>Copyright <span>...</span></h3>
+        </footer>
+        <script src="js/index.js"></script>
+    </body>
 
 </html>

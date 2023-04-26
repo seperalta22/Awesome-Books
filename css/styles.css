@@ -6,6 +6,41 @@
   padding: 0;
 }
 
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr;
+}
+
+footer {
+  grid-row: 3/span 1;
+}
+
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em;
+  border: 2px #272727 solid;
+  margin: 0.7em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.8em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #272727;
+}
+
+nav a:focus {
+  color: #1183ec;
+}
+
 .awesome-books-list {
   display: flex;
   flex-direction: column;
