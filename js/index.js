@@ -75,4 +75,21 @@ booksContainer.addEventListener('click', (e) => {
   }
 });
 
+// display windows
+
+const menuList = document.getElementById("menu-list");
+const menuAddNew = document.getElementById("menu-add-new");
+const menuContact = document.getElementById("menu-contact");
+
+const listSection = document.getElementById("list-section");
+const addNewSection = document.getElementById("add-new");
+const contactSection = document.getElementById("contact-section");
+
+function displayList () {
+    contactSection.style.display = "none";
+    addNewSection.style.display = "none";
+}
+
+menuList.addEventListener('click', displayList);
+
 document.addEventListener('DOMContentLoaded', bookList.displayBooks());
