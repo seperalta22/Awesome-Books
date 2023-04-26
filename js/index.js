@@ -77,19 +77,59 @@ booksContainer.addEventListener('click', (e) => {
 
 // display windows
 
-const menuList = document.getElementById("menu-list");
-const menuAddNew = document.getElementById("menu-add-new");
-const menuContact = document.getElementById("menu-contact");
+const menuList = document.getElementById('menu-list');
+const menuAddNew = document.getElementById('menu-add-new');
+const menuContact = document.getElementById('menu-contact');
 
-const listSection = document.getElementById("list-section");
-const addNewSection = document.getElementById("add-new");
-const contactSection = document.getElementById("contact-section");
+const listSection = document.getElementById('list-section');
+const addNewSection = document.getElementById('add-new');
+const contactSection = document.getElementById('contact-section');
 
-function displayList () {
-    contactSection.style.display = "none";
-    addNewSection.style.display = "none";
+addNewSection.style.display = 'none';
+contactSection.style.display = 'none';
+
+function displayList() {
+  listSection.style.display = 'flex';
+  contactSection.style.display = 'none';
+  addNewSection.style.display = 'none';
+}
+
+function displayAddNew() {
+  listSection.style.display = 'none';
+  addNewSection.style.display = 'flex';
+  contactSection.style.display = 'none';
+}
+
+function displayContact() {
+  listSection.style.display = 'none';
+  addNewSection.style.display = 'none';
+  contactSection.style.display = 'flex';
 }
 
 menuList.addEventListener('click', displayList);
+menuAddNew.addEventListener('click', displayAddNew);
+menuContact.addEventListener('click', displayContact);
 
 document.addEventListener('DOMContentLoaded', bookList.displayBooks());
+
+// date
+
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const date = new Date();
+const month = months[date.getMonth()];
+const day = date.getDate();
+const year = date.getFullYear();
+let hour = date.getHours();
+let minutes = date.getMinutes();
+const seconds = date.getSeconds();
+const ampm = hour >= 12 ? 'pm' : 'am';
+hour %= 12;
+hour = hour || 12;
+minutes = minutes < 10 ? `0${minutes}` : minutes;
+const time = `${hour}:${minutes}:${seconds} ${ampm}`;
+const formattedDate = `${month} ${day}${day % 10 === 1 && day !== 11 ? 'st' : day % 10 === 2 && day !== 12 ? 'nd' : day % 10 === 3 && day !== 13 ? 'rd' : 'th'} ${year}, ${time}`; // eslint-disable-line
+
+const dateDiv = document.querySelector('.date');
+dateDiv.innerHTML = formattedDate;
+dateDiv.style.textAlign = 'right';
+dateDiv.style.marginRight = '0.9em';
